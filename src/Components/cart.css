@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Mulish;
+    
+}
+body{
+    background-color:#F6F6F6;
+}
+.cart{
+    padding: 50px;
+    height: 500px;
+    width: 70%;
+    background-color: white;
+    margin:50px auto;
+   
+}
+.cart-title{
+    text-align: center;
+    color: #5F6B87;
+    font-size:40px;
+    margin:20px ;
+}
+
+/* items img styyling */
+.img-style{
+    width: 80px;
+}
+/* items cardstyling */
+
+.cardstyle{
+    padding:30px 30px;
+    display: flex;
+    align-items: center;
+}
+.titlestyle{
+    color: #a38f8f;
+    font-weight: bold;
+    padding-left:30px;
+    font-size:20px;
+    width: 190px;
+}
+
+.descstyle{
+    color: #353434;
+    font-weight: normal;
+  
+}
+
+.square{
+    height: 40px;
+    width: 40px;
+    border: 1px solid rgb(233, 235, 234);
+    border-collapse: collapse;
+    text-align: center;
+    padding-top: 8px;
+    
+}
+.quantity{
+    display: flex;
+    padding-left:80px;
+}
+#div1{
+    background-color: #2b314c;
+}
+#div2{
+    background-color: #f0e1d2;
+}
+.p-icon{
+    color: white;
+}
+
+.rmdiv{
+    padding-left: 70px;
+}
+.pricetab{
+    padding-left: 60px;
+}
