@@ -8,21 +8,25 @@
     
 }
 body{
-    background-color:#F6F6F6;
+    background-color:#dd4c4c !important;
 }
 .cart{
     padding: 50px;
     height: 500px;
     width: 70%;
     background-color: white;
-    margin:50px auto;
+    margin:40px auto;
    
 }
 .cart-title{
     text-align: center;
-    color: #5F6B87;
+    color: white;
     font-size:40px;
-    margin:20px ;
+    margin:20px auto ;
+    width: 480px;
+}
+.cart-title:hover{
+ color:black;
 }
 
 /* items img styyling */
@@ -32,7 +36,7 @@ body{
 /* items cardstyling */
 
 .cardstyle{
-    padding:30px 30px;
+    padding:20px 30px;
     display: flex;
     align-items: center;
 }
@@ -78,4 +82,16 @@ body{
 }
 .pricetab{
     padding-left: 60px;
+}
+
+hr{
+border: 1px solid red;
+border-radius: 2px;
+}
+
+.btn-group{
+    margin-top: 10px;
+}
+.fas {
+    cursor: pointer;
 }

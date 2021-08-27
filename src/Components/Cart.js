@@ -1,32 +1,63 @@
-import React, { useState } from "react";
+import React, { createContext , useReducer} from "react";
 import "./cart.css";
-import Item from "./Item";
 import { products } from "./Itemsarray";
-import { Scrollbars } from "react-custom-scrollbars";
-import Button from 'react-bootstrap/Button'
+import Appcart from "./Appcart";
+import { reducer } from "./reducer";
+
+export const appContext = createContext();
+
+const initialState = {
+  mobile: products,
+  totalAmount: 0,
+}
+
+
 
 const Cart = () => {
-  const [mobile, setMobile] = useState(products);
+
+//for removing individual item
+  const rmvItem = (id) =>{
+    return dispatch({
+      type: "REMOVE_ITEM",
+      payload: id,
+    });
+  }
+ 
+  //for clear cart
+const clearCart = () =>{
+  return dispatch({
+    type : "ClEAR_CART"
+
+  })
+}
+
+
+//for incremnt quantity
+const inCount = (id) => {
+  return dispatch({
+    type : "INC_COUNT",
+    payload: id,
+  })
+}
+
+const deCount = (id) =>{
+  return dispatch({
+    type : "DEC_COUNT",
+    payload : id
+  })
+}
+
+  
+ const [state, dispatch] = useReducer(reducer, initialState)
+
+ 
+
+ 
   return (
     <>
-      <h2 className="cart-title">My Shopping Cart</h2>
-     
-      <div className="cart">
-      <Scrollbars>
-        {mobile.map((elm) => {
-          return (
-            <>
-              <Item key={elm.id } {...elm}/>
-            </>
-          );
-        })}
-        </Scrollbars>
-       <div className='btn-group'>
-       <Button variant="outline-info" size="lg">Total <i class="fas fa-rupee-sign"></i></Button>
-
-       </div>
-      </div>
-      
+    <appContext.Provider value={{...state , rmvItem , clearCart , inCount , deCount}}>
+      <Appcart/>
+      </appContext.Provider>
     </>
   );
 };
